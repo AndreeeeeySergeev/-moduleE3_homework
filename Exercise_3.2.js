@@ -1,23 +1,19 @@
-function _array() {
-  const arr = [0, 3, null, 0, 1, 2, NaN, "точкаточказапятая"]
-
-  let even = 0,
-    odd = 0,
-    zero = 0;
-
-  for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
-      if (arr[i] === 0) {
-        zero += 1;
-      } else if (arr[i] % 2 === 0) {
-        even += 1;
+function count(a) {
+  if (1 < a <= 1000) {
+  let arr = new Array(a); // создаем массив указанной длины
+  for (let e = 2; e <= arr.length - 1; e++) { // заполняем массив
+    arr.push(e);
+  }
+    for (let i= 2; i <= arr.length - 1; i++) {
+      if (a % arr[i] === 0) { // если число делится без остатка, только на себя,
+        console.log("Число непростое");  // то число простое
       } else {
-        odd += 1;
+        console.log("Число простое");
       }
     }
+} else {
+  console.log("Введите другое число");
   }
-
-  console.log('четных элементов: ', even)
-  console.log('нечетных элементов: ', odd)
-  console.log('нулей: ', zero)
 }
+
+count(10)
